@@ -1,12 +1,16 @@
 "use client";
-import { useRouter } from "next/router";
 
-export default function ProductsPage() {
+import { usePathname, useRouter } from "next/navigation";
+
+export default function ProductsPage({searchParams}) {
+
   const router = useRouter();
+  const pathName = usePathname();
+  console.log(pathName);
   return (
     <div
-      onclick={() => {
-        router.push("/cart");
+      onClick={() => {
+        router.replace("/cart");
       }}
     >
       Products

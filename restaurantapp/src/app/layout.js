@@ -2,8 +2,8 @@ export default function RootLayout({ children }) {
   return (
     <>
       <header>Header for user</header>
-      {children}
+      <body>{children}</body>
       <footer>Footer for user</footer>
-    </>
+      </>
   );
 };
