@@ -1,0 +1,52 @@
+/* 
+colors text: #343a40 , #f2e8c6
+colors link: #952323
+colors link:active,hover: #a73121
+colors screen background : #fffbf5
+color button: #bca37f
+color button:active :  #ead7bb
+color strat:#ffda3d
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+.button {
+  border: none;
+  background-color: #bca37f;
+  transition: all 0.8s;
+}
+
+.button:hover,
+.button:active {
+  background-color: #ead7bb;
+}
+.button:disabled {
+  background-color: #bcb8b1;
+}
+
+.s {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 6px;
+}
+
+.m {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 10px;
+}
+
+.l {
+  padding: 14px;
+  font-size: 24px;
+  border-radius: 10px;
+}
+.dark {
+  background-color: #643a6b;
+  color: #f2e8c6;
+}
+.dark:hover {
+  background-color: #5f264a;
+}

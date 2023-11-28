@@ -1,0 +1,52 @@
+/* 
+colors text: #343a40 , #f2e8c6
+colors link: #952323
+colors link:active,hover: #a73121
+colors screen background : #fffbf5
+color button: #bca37f
+color button:active :  #ead7bb
+color strat:#ffda3d
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+.root {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  align-content: center;
+  gap: 50px;
+  border: 3px solid #ead7bb;
+  width: 600px;
+  height: 120px;
+  transition: all 1s;
+}
+.root:hover {
+  box-shadow: 10px 10px 10px hwb(0 0% 100% / 0.363);
+  border: 3px solid #bca37f;
+}
+.dark {
+  border: 3px solid #643a6b;
+  transition: all 1s;
+}
+.dark:hover {
+  border: 3px solid #5f264a;
+  box-shadow: 10px 10px 10px hwb(0 0% 100% / 0.363);
+}
+
+.productBox {
+  padding-left: 20px;
+}
+.nameDish {
+  letter-spacing: 0.3px;
+}
+.list {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+}
+.price {
+  font-size: 18px;
+  font-weight: 700;
+}

@@ -1,0 +1,53 @@
+/* 
+colors text: #343a40 , #f2e8c6
+colors link: #952323
+colors link:active,hover: #a73121
+colors screen background : #fffbf5
+color button: #bca37f
+color button:active :  #ead7bb
+color strat:#ffda3d
+SPACING SYSTEM (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+FONT SIZE SYSTEM (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #952323;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+.headerDark {
+  background-color: #5f264a;
+}
+.logoBox {
+  margin-left: 20px;
+}
+.logoText {
+  font-family: "Onest", sans-serif;
+  color: #f2e8c6;
+}
+.themeBox {
+  margin-right: 40px;
+}
+.theme {
+  color: black;
+  width: 25px;
+  height: 25px;
+}
+.theme:hover {
+  color: #f2e8c6;
+}
+.input {
+  visibility: hidden;
+}
+.dark {
+  color: #f2e8c6;
+}
+.dark:hover {
+  color: black;
+}
