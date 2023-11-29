@@ -1,57 +1,60 @@
 import { useReducer } from "react";
 import { Button } from "../Button/component";
-import { useRouter } from "next/navigation";
-import { RatingInput } from "../RatingStar/component";
+import { RatingInput } from "../RatingInput/component";
+import classNames from "classnames";
+
 import styles from "./styles.module.css";
+
 const DEFAULT_VALUE = {
+  name: "",
   text: "",
-  rating: "",
+  rating: 1,
 };
+
 const reducer = (state, action) => {
   switch (action?.type) {
-    case "setReview":
+    case "setName":
+      return { ...state, name: action.payload };
+    case "setText":
       return { ...state, text: action.payload };
     case "setRating":
       return { ...state, rating: action.payload };
-    case "reset":
+    case "save":
       return { ...DEFAULT_VALUE };
-
     default:
       return state;
   }
 };
-export const ReviewForm = ({ onSubmit }) => {
+
+export const ReviewForm = ({ onSubmit, className }) => {
   const [formValue, dispatch] = useReducer(reducer, DEFAULT_VALUE);
-  const router = useRouter();
+
   return (
-    <div className={styles.root}>
-      <h3 className={styles.h3}>Add your review</h3>
-      <input
-        type="text"
-        value={formValue.text}
-        placeholder="Review:"
-        onChange={(event) => {
-          dispatch({ type: "setReview", payload: event.target.value });
-        }}
-        className={styles.input}
-      />
-      <RatingInput
-        value={formValue.rating}
-        onChange={(value) => {
-          dispatch({ type: "setRating", payload: value });
-        }}
-      />
-      <div className={styles.boxButton}>
-        <Button
-          onClick={() => {
-            onSubmit(formValue);
-            dispatch({ type: "reset" });
-            router.refresh();
+    <div className={classNames(styles.reviewForm, className)}>
+      Review Form
+      <div>
+        <span>Name </span>
+        <input
+          value={formValue.name}
+          onChange={(event) => {
+            dispatch({ type: "setName", payload: event.target.value });
           }}
-        >
-          Add Review
-        </Button>
+        />
       </div>
+      <div>
+        <span>Text </span>
+        <input
+          value={formValue.text}
+          onChange={(event) => {
+            dispatch({ type: "setText", payload: event.target.value });
+          }}
+        />
+      </div>
+      <div>
+        <span>Rating </span>
+        <RatingInput value={formValue.rating} onChange={(value) => dispatch({type:"setRating", payload: value })}/>
+      </div>
+      <Button onClick={onSubmit}>Submit</Button>
     </div>
   );
 };

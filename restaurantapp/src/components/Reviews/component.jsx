@@ -1,20 +1,12 @@
-import classNames from "classnames";
 import { Review } from "../Review/component";
-import { Starts } from "../Stars/component";
 import { User } from "../User/component";
-import styles from "./styles.module.css";
-import { DarkThemeReview } from "./DarkThemeReview";
-export const Reviews = ({ review }) => {
+export const Reviews = ({ userId, text }) => {
   return (
-    <div className={classNames(styles.root)}>
-      {review.map(({ id, userId, text, rating }) => (
-        <DarkThemeReview key={id}>
-          <div>
+    <div>
+      <h3>Reviews: </h3>
+      <div>
             <User userId={userId} /> <Review text={text} />
           </div>
-          <Starts value={rating} />
-        </DarkThemeReview>
-      ))}
     </div>
   );
 };

@@ -28,11 +28,11 @@ FONT SIZE SYSTEM (px)
   border: 3px solid #bca37f;
 }
 .dark {
-  border: 3px solid #643a6b;
+  border: 3px solid #481252;
   transition: all 1s;
 }
 .dark:hover {
-  border: 3px solid #5f264a;
+  border: 3px solid #481252;;
   box-shadow: 10px 10px 10px hwb(0 0% 100% / 0.363);
 }
 .nameRestaurant {

@@ -2,7 +2,6 @@ import { Menu } from "@/components/Menu/component";
 import { getDishById } from "@/redux/sevices/api";
 import styles from "./styles.module.css";
 import Link from "next/link";
-import { CartContainer } from "@/components/Cart/container";
 
 export default async function MenuPage({ params: { restaurantId } }) {
   const restaurants = await getDishById(restaurantId);
@@ -27,7 +26,6 @@ export default async function MenuPage({ params: { restaurantId } }) {
       </div>
       <div className={styles.menuPage}>
         <Menu menu={restaurants} />
-        <CartContainer />
       </div>
     </div>
   );
